@@ -1,0 +1,143 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    user-select: none;
+}
+
+.wrapper {
+    width: 60rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.wrapper:hover .btn-control {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.wrapper .slick-slider {
+    display: flex;
+    align-items: center;
+    gap: 0 2rem;
+    transition: all .3s ease;
+}
+
+.wrapper .slick-slider .slide {
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0.3rem;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.wrapper .slick-slider .slide:hover img {
+    transform: scale(1.2);
+}
+
+.wrapper .slick-slider .slide>img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all .3s ease;
+    pointer-events: none;
+}
+
+.wrapper .btn-control {
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+.wrapper .btn-control .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 99999;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all .3s ease;
+    opacity: 0.5;
+}
+
+.wrapper .btn-control .btn:hover {
+    opacity: 1;
+}
+
+.wrapper .btn-control .btn-prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .btn-control .btn-next {
+    right: 0;
+    transform: translate(50%, -50%);
+    transform: translate3d();
+}
+
+.show-img {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show-img .img {
+    height: 100%;
+    max-width: 60rem;
+    width: 100%;
+    transform: scale(1);
+    transition: all .3s ease;
+}
+
+.show-img .img img {
+    height: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.show-img.hide .img {
+    transform: scale(0.5);
+}
+
+.active-image .btn {
+    position: absolute;
+    font-size: 4rem;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.active-image .btn-next {
+    right: 2rem;
+}
+
+.active-image .btn-prev {
+    left: 2rem;
+}
