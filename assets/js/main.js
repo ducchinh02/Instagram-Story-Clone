@@ -7,10 +7,6 @@ let slideIndex = 0
 const nextSlide = (index) => {
         slickSlider.style.transform = `translateX(-${slideItem[index].offsetLeft}px)`
     }
-    // previous slide
-const prevSlide = (index) => {
-        slickSlider.style.transform = `translateX(${slideItem[index].offsetLeft}px)`
-    }
     // control slide when click button next/prev
 btnNext.addEventListener('click', () => {
     slideIndex++;
